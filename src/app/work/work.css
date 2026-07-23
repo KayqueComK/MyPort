@@ -1,0 +1,233 @@
+/* ═══════════════════════════════════════════════
+   Work Page — inspired by itssharl.ee/work
+   Adapted to the portfolio's off-white + blue palette
+   ═══════════════════════════════════════════════ */
+
+/* ── Page grid: left description | right list ── */
+.work-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ── LEFT PANEL ── */
+.work-left-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 3rem 3rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  will-change: transform;
+}
+
+.work-left-placeholder {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+/* Description card */
+.work-description-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 420px;
+  background: rgba(248, 247, 244, 0.85);
+  border: 1px solid rgba(0, 87, 255, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 87, 255, 0.08);
+  will-change: opacity, transform;
+}
+
+.work-description-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary);
+  opacity: 0.6;
+}
+
+.work-description-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.work-description-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.work-description-cta {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.work-description-card:hover .work-description-cta {
+  opacity: 1;
+}
+
+/* ── RIGHT PANEL ── */
+.work-right-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 7rem 3rem 3rem;
+  border-left: 1px solid rgba(0, 87, 255, 0.1);
+  min-height: 100vh;
+}
+
+/* Header row: "Work" + count */
+.work-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.work-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.work-count {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary);
+  opacity: 0.45;
+}
+
+/* ── Project list ── */
+.work-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.work-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid rgba(0, 87, 255, 0.12);
+  text-decoration: none;
+  color: var(--primary);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  will-change: opacity, transform;
+}
+
+.work-list-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.work-list-arrow {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.work-list-name {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: transform 0.2s ease;
+}
+
+.work-list-category {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+/* ── Hover / Active states ── */
+.work-list-item.is-active {
+  color: var(--primary);
+}
+
+.work-list-item.is-active .work-list-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.work-list-item.is-active .work-list-name {
+  transform: translateX(4px);
+}
+
+.work-list-item.is-active .work-list-category {
+  opacity: 1;
+}
+
+.work-list-item.is-dimmed {
+  opacity: 0.3;
+}
+
+/* ── Footer ── */
+.work-footer {
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  opacity: 0.3;
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — stack on smaller screens
+   ═══════════════════════════════════ */
+@media (max-width: 768px) {
+  .work-page {
+    grid-template-columns: 1fr;
+  }
+
+  .work-left-panel {
+    display: none;
+  }
+
+  .work-right-panel {
+    border-left: none;
+    padding: 6rem 1.5rem 2rem;
+  }
+
+  .work-title {
+    font-size: 2.8rem;
+  }
+
+  .work-list-item {
+    padding: 1rem 0;
+  }
+
+  .work-list-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
