@@ -43,7 +43,7 @@ export default function About() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col gap-4">
-          <h3 className="text-sm font-bold tracking-widest uppercase text-[var(--primary)] mb-4">Habilidades</h3>
+          <h3 className="text-sm font-bold tracking-widest uppercase text-[var(--text)] opacity-60 mb-4">Habilidades</h3>
           <div className="flex flex-wrap gap-4">
             {["UX/UI Design", "Desenvolvimento Web", "React", "Next.js", "Three.js", "Tailwind CSS", "Figma", "Identidade Visual"].map((skill) => (
               <span key={skill} className="px-6 py-3 border border-[var(--primary)] rounded-full text-sm font-medium tracking-wide hover:bg-[var(--primary)] hover:text-[var(--background)] transition-colors cursor-pointer">

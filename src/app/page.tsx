@@ -5,9 +5,9 @@ import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-// Lazy-load the heavy Three.js canvas — won't block initial page render
-const CanvasBackground = dynamic(
-  () => import("@/components/canvas/CanvasBackground"),
+// Lazy-load the Balatro WebGL background — won't block initial page render
+const Balatro = dynamic(
+  () => import("@/components/canvas/Balatro"),
   { ssr: false }
 );
 
@@ -45,7 +45,18 @@ export default function Home() {
 
   return (
     <>
-      <CanvasBackground />
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <Balatro
+          isRotate
+          mouseInteraction={false}
+          spinSpeed={1.5}
+          spinRotation={-0.5}
+          pixelFilter={1200}
+          color1="#0057FF"
+          color2="#0057FF"
+          color3="#F8F7F4"
+        />
+      </div>
       <div className="flex-1 flex flex-col justify-center items-center pt-28 md:pt-36 lg:pt-40 pb-12 px-6 md:px-20 lg:px-40 pointer-events-none relative z-10">
         <motion.div
           variants={containerVariants}
@@ -55,19 +66,29 @@ export default function Home() {
         >
           <div className="flex flex-col gap-2 md:gap-4 mb-8 md:mb-12 pointer-events-auto items-center">
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight">
-               Ei, eu sou o <span className="font-bold italic pr-2">Kayque</span>
+              Ei, eu sou o <span className="font-bold italic pr-2">Kayque</span>
             </motion.h1>
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight">
               <span className="font-bold italic pr-2">Alberto</span>
             </motion.h1>
-            <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight mt-4 md:mt-8 text-[var(--primary)] opacity-80">
-               Mas pode me chamar de <span className="font-bold italic underline decoration-4 underline-offset-8">KIQ</span>
+            <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight mt-4 md:mt-8 text-[var(--text)] opacity-80">
+              Mas pode me chamar de <span className="font-bold italic underline decoration-4 underline-offset-8 decoration-[var(--primary)]">KIQ</span>
             </motion.h1>
           </div>
 
-          <div className="flex flex-col gap-1 mb-12 pointer-events-auto text-lg md:text-xl lg:text-2xl font-light opacity-80 items-center">
-            <motion.p variants={itemVariants}>Sou designer gráfico, designer UX/UI</motion.p>
-            <motion.p variants={itemVariants}>&amp; desenvolvedor front-end</motion.p>
+          <div className="flex flex-col gap-1 mb-12 pointer-events-auto text-lg md:text-xl lg:text-2xl font-bold opacity-90 items-center">
+            <motion.p variants={itemVariants}>Sou estudante de Sistemas e apaixonado por desenvolvimento web</motion.p>
+            <motion.p variants={itemVariants}>
+              &amp; Católico e Jovem missionario{" "}
+              <a
+                href="https://www.instagram.com/comagape/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-2 underline-offset-4 decoration-[var(--primary)] hover:opacity-80 transition-opacity"
+              >
+                Ágape
+              </a>
+            </motion.p>
           </div>
 
           <div className="flex flex-col gap-4 pointer-events-auto items-center">

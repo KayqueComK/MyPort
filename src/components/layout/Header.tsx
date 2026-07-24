@@ -20,16 +20,16 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center text-[var(--foreground)] pointer-events-none">
         <div className="flex items-center gap-4 pointer-events-auto">
-          <Link href="/" className="group flex items-center gap-4">
+          <Link href="/" className="group flex items-center gap-3">
             <Image
-              src="/kiq-logo.png"
+              src="/KIQ__1_-removebg-preview.png"
               alt="KIQ Logo"
-              width={186}
-              height={108}
-              className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+              width={200}
+              height={200}
+              className="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform"
               priority
             />
-            <div className="hidden md:flex flex-col text-xs font-medium tracking-widest uppercase leading-tight border-l border-[var(--primary)] border-opacity-30 pl-4 py-0.5">
+            <div className="hidden md:flex flex-col text-xs font-medium tracking-widest uppercase leading-tight border-l border-[#1b1b1b] border-opacity-30 pl-4 py-0.5">
               <span className="font-bold">Kayque</span>
               <span className="opacity-60">Alberto</span>
             </div>
@@ -40,7 +40,7 @@ export default function Header() {
           <button className="text-xs font-bold tracking-widest hover:opacity-50 transition-opacity">
             PT
           </button>
-          <button 
+          <button
             onClick={() => setIsMenuOpen(true)}
             className="hover:scale-110 transition-transform"
             aria-label="Open menu"
@@ -60,7 +60,7 @@ export default function Header() {
             className="fixed inset-0 z-[100] bg-[var(--background)] text-[var(--foreground)] flex flex-col justify-center px-10 md:px-32 transform-gpu"
           >
             <div className="absolute top-6 right-6 md:top-10 md:right-10">
-              <button 
+              <button
                 onClick={() => setIsMenuOpen(false)}
                 className="hover:rotate-90 transition-transform duration-200"
                 aria-label="Close menu"
@@ -78,7 +78,7 @@ export default function Header() {
                   exit={{ y: 10, opacity: 0 }}
                   transition={{ delay: i * 0.05 + 0.1, duration: 0.25 }}
                 >
-                  <Link 
+                  <Link
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
                     className="text-5xl md:text-8xl font-black tracking-tighter hover:text-opacity-70 transition-colors inline-block"
@@ -89,7 +89,7 @@ export default function Header() {
               ))}
             </nav>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

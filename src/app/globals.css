@@ -9,9 +9,10 @@
 }
 
 :root {
-  /* Off-white background with electric blue typography and accents */
+  /* Off-white background with dark typography and electric blue accents */
   --background: #F8F7F4;
-  --foreground: #0057FF;
+  --foreground: #1b1b1b;
+  --text: #1b1b1b;
   --primary: #0057FF;
   --secondary: #F8F7F4;
 }
