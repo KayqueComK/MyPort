@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import NoiseOverlay from "@/components/layout/NoiseOverlay";
 import CustomCursor from "@/components/layout/CustomCursor";
 import SplashScreen from "@/components/layout/SplashScreen";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
