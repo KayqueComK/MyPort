@@ -5,6 +5,8 @@ import Header from "@/components/layout/Header";
 import NoiseOverlay from "@/components/layout/NoiseOverlay";
 import CustomCursor from "@/components/layout/CustomCursor";
 import SplashScreen from "@/components/layout/SplashScreen";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,6 +39,8 @@ export default function RootLayout({
         <main className="flex-1 flex flex-col relative z-10">
           {children}
         </main>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
