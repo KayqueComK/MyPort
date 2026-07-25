@@ -66,20 +66,20 @@ export default function Home() {
         >
           <div className="flex flex-col gap-2 md:gap-4 mb-8 md:mb-12 pointer-events-auto items-center">
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight">
-              Ei, eu sou o <span className="font-bold italic pr-2">Kayque</span>
+              Olá sou o <span className="font-bold italic pr-2">Kayque</span>
             </motion.h1>
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight">
               <span className="font-bold italic pr-2">Alberto</span>
             </motion.h1>
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight mt-4 md:mt-8 text-[var(--text)] opacity-80">
-              Mas pode me chamar de <span className="font-bold italic underline decoration-4 underline-offset-8 decoration-[var(--primary)]">KIQ</span>
+              Seja bem vindo ao meu <span className="font-bold italic underline decoration-4 underline-offset-8 decoration-[var(--primary)]">portfolio</span>
             </motion.h1>
           </div>
 
           <div className="flex flex-col gap-1 mb-12 pointer-events-auto text-lg md:text-xl lg:text-2xl font-bold opacity-90 items-center">
             <motion.p variants={itemVariants}>Sou estudante de Sistemas e apaixonado por desenvolvimento web</motion.p>
             <motion.p variants={itemVariants}>
-              &amp; Católico e Jovem missionario{" "}
+              Católico e Jovem missionario{" "}
               <a
                 href="https://www.instagram.com/comagape/"
                 target="_blank"
@@ -100,6 +100,15 @@ export default function Home() {
             <motion.div variants={itemVariants}>
               <Link href="/about" className="group inline-flex items-center gap-2 text-xl font-medium hover:opacity-70 transition-opacity">
                 <span className="text-[var(--primary)] group-hover:translate-x-2 transition-transform">→</span> Mais sobre mim
+              </Link>
+            </motion.div>
+            <motion.div variants={itemVariants} className="mt-2">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[var(--primary)] text-white text-xl font-semibold shadow-lg shadow-[#0057FF]/25 hover:shadow-xl hover:shadow-[#0057FF]/40 hover:scale-105 active:scale-95 transition-all duration-300"
+              >
+                <span>Me contatar</span>
+                <span className="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
               </Link>
             </motion.div>
           </div>

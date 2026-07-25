@@ -40,7 +40,7 @@ const projects = [
     category: "Desenvolvimento Front-End",
     description:
       "Portfólio pessoal construído com Next.js, Framer Motion e Three.js. Conta com background 3D, transições suaves e cursor personalizado.",
-    link: "https://example.com/portfolio",
+    link: "https://meuportifolio-flax-three.vercel.app/",
   },
   // ✏️ Add more projects below by copying the object above:
   // {
@@ -169,10 +169,20 @@ export default function Work() {
           ))}
         </ul>
 
-        {/* Footer */}
-        <motion.p variants={itemVariants} className="work-footer">
-          Projetado &amp; codado por KIQ © {new Date().getFullYear()}
-        </motion.p>
+        {/* Contact CTA & Footer */}
+        <motion.div variants={itemVariants} className="mt-12 pt-8 border-t border-[rgba(27,27,27,0.1)] flex flex-col items-center gap-4">
+          <p className="text-sm font-medium opacity-70 text-center">Gostou dos projetos ou tem uma ideia em mente?</p>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[var(--primary)] text-white text-base md:text-lg font-semibold shadow-lg shadow-[#0057FF]/25 hover:shadow-xl hover:shadow-[#0057FF]/40 hover:scale-105 active:scale-95 transition-all duration-300"
+          >
+            <span>Me contatar</span>
+            <span className="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+          </Link>
+          <p className="work-footer mt-4">
+            Projetado &amp; codado por KIQ © {new Date().getFullYear()}
+          </p>
+        </motion.div>
       </motion.div>
     </div>
   );

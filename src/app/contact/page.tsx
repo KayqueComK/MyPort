@@ -38,18 +38,18 @@ export default function Contact() {
           Interessado em trabalhar junto ou só quer mandar um oi? Me manda uma mensagem!
         </motion.div>
 
-        <motion.a 
+        <motion.a
           variants={itemVariants}
-          href="mailto:hello@example.com"
+          href="mailto:Kayquealberto@hotmail.com"
           className="text-3xl md:text-5xl font-bold border-b-4 border-[var(--primary)] pb-2 hover:text-[var(--primary)] hover:border-transparent transition-all mb-20"
         >
-          hello@example.com
+          Kayquealberto@hotmail.com
         </motion.a>
 
         <motion.div variants={itemVariants} className="flex gap-12 text-sm font-bold tracking-widest uppercase">
-          <a href="#" className="hover:text-[var(--primary)] transition-colors">Instagram</a>
-          <a href="#" className="hover:text-[var(--primary)] transition-colors">Behance</a>
-          <a href="#" className="hover:text-[var(--primary)] transition-colors">LinkedIn</a>
+          <a href="https://www.instagram.com/k.ayqueal?igsh=dzUyYjZhemNyMGQy&utm_source=qr" className="hover:text-[var(--primary)] transition-colors">Instagram</a>
+          <a href="https://github.com/KayqueComK" className="hover:text-[var(--primary)] transition-colors">Github</a>
+          <a href="https://www.linkedin.com/in/kayque-alberto-937a08230?utm_source=share_via&utm_content=profile&utm_medium=member_ios" className="hover:text-[var(--primary)] transition-colors">LinkedIn</a>
         </motion.div>
       </motion.div>
     </div>

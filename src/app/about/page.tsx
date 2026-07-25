@@ -35,11 +35,19 @@ export default function About() {
         </motion.h1>
 
         <motion.div variants={itemVariants} className="text-xl md:text-3xl leading-relaxed font-light mb-12">
-          Olá, meu nome é Kayque Alberto e uso KIQ como meu apelido nas redes sociais. Sou designer gráfico, designer UX/UI &amp; desenvolvedor front-end.
+          Olá, meu nome é Kayque Alberto tenho 21 anos e atualmente estou estudando para ser um desenvolvedor front-end.
         </motion.div>
 
         <motion.div variants={itemVariants} className="text-xl md:text-3xl leading-relaxed font-light mb-16 opacity-80">
-          Também sou apaixonado por música pop e crio retratos e universos ao redor do que ouço. Estou sempre curioso para aprender mais quando se trata de novas tecnologias e programação criativa.
+          Também sou apaixonado por música crio retratos e universos ao redor do que ouço. Estou sempre curioso para aprender mais quando se trata de novas tecnologias e programação criativa. Atualmente trabalho como Suporte Técnico Mas meu objetivo principal e ser um Grande Desenvolvedor Front-end e criar sites incríveis para ajudar as pesosas em seu dia a dia.
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="text-xl md:text-3xl leading-relaxed font-light mb-16 opacity-80">
+          Atualmente faço parte da <a href="https://www.instagram.com/comagape/" target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4 decoration-[var(--primary)] hover:opacity-80 transition-opacity">Comunidade Missionária Católica Ágape</a> sendo um Jovem participante do Grupo Lolek. Trabalhamos com a evangelização dos jovens e procuramos viver como cristo, e anuciantes da boa nova. E procuro
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="text-xl md:text-3xl leading-relaxed font-light mb-16 opacity-80">
+          Nas horas vagas sou musico e Toco alguns instrumentos (Violão, guitarra, cajon, Cavaquinho...) gosto de sentir a musica e ultiliza-la como forma de expressar os meus sentimentos e pensamentos.
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col gap-4">
