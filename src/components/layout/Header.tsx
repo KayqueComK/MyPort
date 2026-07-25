@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center text-[var(--foreground)] pointer-events-none">
+      <header className="absolute top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center text-[var(--foreground)] pointer-events-none">
         <div className="flex items-center gap-4 pointer-events-auto">
           <Link href="/" className="group flex items-center gap-3">
             <Image
