@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 export default function About() {
@@ -30,9 +31,48 @@ export default function About() {
         animate="visible"
         className="max-w-4xl w-full mx-auto transform-gpu"
       >
-        <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-black mb-8 md:mb-16 tracking-tighter">
-          Sobre.
-        </motion.h1>
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 sm:gap-8 mb-12 md:mb-24"
+        >
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter">
+            Sobre mim.
+          </h1>
+          {/* Moldura do MS Paint com a foto dentro da tela */}
+          <div className="relative w-48 sm:w-60 md:w-72 aspect-[415/601] flex-shrink-0 filter drop-shadow-2xl">
+            {/* Foto de Perfil perfeitamente encaixada na tela do MS Paint */}
+            <div
+              className="absolute overflow-hidden z-10 bg-neutral-900"
+              style={{
+                left: "28.43%",
+                top: "13.81%",
+                width: "60.96%",
+                height: "58.07%",
+              }}
+            >
+              <Image
+                src="/profile.png"
+                alt="Kayque Alberto"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                priority
+                unoptimized
+              />
+            </div>
+
+            {/* Moldura do MS Paint sobreposta */}
+            <div className="absolute inset-0 z-20 pointer-events-none">
+              <Image
+                src="/download (1).png"
+                alt="Moldura MS Paint"
+                fill
+                className="object-contain"
+                priority
+                unoptimized
+              />
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div variants={itemVariants} className="text-lg sm:text-xl md:text-3xl leading-relaxed font-light mb-8 md:mb-12">
           Olá, meu nome é Kayque Alberto tenho 21 anos e atualmente estou estudando para ser um desenvolvedor front-end.
