@@ -43,7 +43,7 @@ export default function About() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="text-lg sm:text-xl md:text-3xl leading-relaxed font-light mb-10 md:mb-16 opacity-80">
-          Atualmente faço parte da <a href="https://www.instagram.com/comagape/" target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4 decoration-[var(--primary)] hover:opacity-80 transition-opacity">Comunidade Missionária Católica Ágape</a> sendo um Jovem participante do Grupo Lolek. Trabalhamos com a evangelização dos jovens e procuramos viver como cristo, e anuciantes da boa nova. E procuro
+          Atualmente faço parte da <a href="https://www.instagram.com/comagape/" target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4 decoration-[var(--primary)] hover:opacity-80 transition-opacity">Comunidade Missionária Católica Ágape</a> sendo um Jovem participante do Grupo Lolek. Trabalhamos com a evangelização dos jovens e procuramos viver como cristo, e anuciantes da boa nova.
         </motion.div>
 
         <motion.div variants={itemVariants} className="text-lg sm:text-xl md:text-3xl leading-relaxed font-light mb-10 md:mb-16 opacity-80">
