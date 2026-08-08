@@ -72,7 +72,13 @@ export default function Home() {
               <span className="font-bold italic pr-2">Alberto</span>
             </motion.h1>
             <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight mt-2 md:mt-8 text-[var(--text)] opacity-80">
-              Seja bem vindo ao meu <span className="font-bold italic underline decoration-4 underline-offset-8 decoration-[var(--primary)]">portfolio</span>
+              Seja bem vindo ao meu{" "}
+              <Link
+                href="/work"
+                className="font-bold italic underline decoration-4 underline-offset-8 decoration-[var(--primary)] hover:opacity-80 transition-opacity"
+              >
+                portfolio
+              </Link>
             </motion.h1>
           </div>
 
