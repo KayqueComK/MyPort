@@ -40,14 +40,14 @@ export default function About() {
           </h1>
           {/* Moldura do MS Paint com a foto dentro da tela */}
           <div className="relative w-48 sm:w-60 md:w-72 aspect-[415/601] flex-shrink-0 filter drop-shadow-2xl">
-            {/* Foto de Perfil perfeitamente encaixada na tela do MS Paint */}
+            {/* Foto de Perfil (camada inferior - z-10) */}
             <div
               className="absolute overflow-hidden z-10 bg-neutral-900"
               style={{
-                left: "28.43%",
-                top: "13.81%",
-                width: "60.96%",
-                height: "58.07%",
+                left: "29.2%",
+                top: "14.5%",
+                width: "59.5%",
+                height: "56.8%",
               }}
             >
               <Image
@@ -60,8 +60,8 @@ export default function About() {
               />
             </div>
 
-            {/* Moldura do MS Paint sobreposta */}
-            <div className="absolute inset-0 z-20 pointer-events-none">
+            {/* Moldura do MS Paint (camada superior - z-30) sobreposta */}
+            <div className="absolute inset-0 z-30 pointer-events-none">
               <Image
                 src="/download (1).png"
                 alt="Moldura MS Paint"
