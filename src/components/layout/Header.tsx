@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center text-[var(--foreground)] pointer-events-none">
+      <header className="absolute top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] pointer-events-none">
         <div className="flex items-center gap-4 pointer-events-auto">
           <Link href="/" className="group flex items-center gap-3">
             <Image
@@ -26,18 +26,18 @@ export default function Header() {
               alt="KIQ Logo"
               width={200}
               height={200}
-              className="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform"
+              className="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform brightness-0 invert drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]"
               priority
             />
-            <div className="hidden md:flex flex-col text-xs font-medium tracking-widest uppercase leading-tight border-l border-[#1b1b1b] border-opacity-30 pl-4 py-0.5">
-              <span className="font-bold">Kayque</span>
-              <span className="opacity-60">Alberto</span>
+            <div className="hidden md:flex flex-col text-xs font-medium tracking-widest uppercase leading-tight border-l border-white/40 pl-4 py-0.5 text-white font-bitrank">
+              <span>Kayque</span>
+              <span className="opacity-80">Alberto</span>
             </div>
           </Link>
         </div>
 
-        <div className="flex items-center gap-6 pointer-events-auto">
-          <button className="text-xs font-bold tracking-widest hover:opacity-50 transition-opacity">
+        <div className="flex items-center gap-6 pointer-events-auto text-white">
+          <button className="text-xs font-bold tracking-widest hover:opacity-70 transition-opacity">
             PT
           </button>
           <button
@@ -45,7 +45,7 @@ export default function Header() {
             className="hover:scale-110 transition-transform"
             aria-label="Open menu"
           >
-            <HambergerMenu size="32" variant="Bulk" className="text-[var(--foreground)]" />
+            <HambergerMenu size="32" variant="Bulk" className="text-white" />
           </button>
         </div>
       </header>

@@ -33,13 +33,13 @@ export default function About() {
       >
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 sm:gap-8 mb-12 md:mb-24"
+          className="flex flex-row items-center justify-between gap-3 sm:gap-8 mb-12 md:mb-20"
         >
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter">
+          <h1 className="text-3xl sm:text-6xl md:text-8xl font-black tracking-tighter">
             Sobre mim.
           </h1>
           {/* Moldura do MS Paint com a foto dentro da tela */}
-          <div className="relative w-48 sm:w-60 md:w-72 aspect-[415/601] flex-shrink-0 filter drop-shadow-2xl">
+          <div className="relative w-32 sm:w-56 md:w-72 aspect-[415/601] flex-shrink-0 filter drop-shadow-2xl">
             {/* Foto de Perfil (camada inferior - z-10) */}
             <div
               className="absolute overflow-hidden z-10 bg-neutral-900"
