@@ -14,8 +14,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Kayque Alberto - Portfólio",
-  description: "Portfólio de Kayque Alberto (KIQ) - Designer Gráfico, Designer UX/UI & Desenvolvedor Front-End",
+  title: {
+    default: "Kayque Alberto - Desenvolvedor Front-End & UI/UX",
+    template: "%s | Kayque Alberto",
+  },
+  description:
+    "Desenvolvedor Front-End com olhar de UI/UX Design. Crio interfaces modernas, interativas e de alta performance com React e Next.js.",
   icons: {
     icon: "/icon.png",
   },

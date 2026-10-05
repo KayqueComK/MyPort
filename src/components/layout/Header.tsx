@@ -20,16 +20,19 @@ export default function Header() {
     <>
       <header className="absolute top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] pointer-events-none">
         <div className="flex items-center gap-4 pointer-events-auto">
-          <Link href="/" className="group flex items-center gap-3">
+          <Link
+            href="/"
+            className="group flex items-center gap-3 px-3.5 py-2 md:px-4 md:py-2.5 rounded-2xl bg-black/25 backdrop-blur-xl backdrop-saturate-150 border border-white/15 shadow-[0_8px_32px_0_rgba(0,0,0,0.37),inset_0_1px_1px_0_rgba(255,255,255,0.2)] hover:bg-black/35 hover:border-white/25 hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_1px_0_rgba(255,255,255,0.3)] transition-all duration-300"
+          >
             <Image
               src="/KIQ__1_-removebg-preview.png"
               alt="KIQ Logo"
               width={200}
               height={200}
-              className="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform brightness-0 invert drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]"
+              className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform brightness-0 invert drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]"
               priority
             />
-            <div className="hidden md:flex flex-col text-xs font-medium tracking-widest uppercase leading-tight border-l border-white/40 pl-4 py-0.5 text-white font-bitrank">
+            <div className="hidden md:flex flex-col text-xs font-medium tracking-widest uppercase leading-tight border-l border-white/30 pl-3.5 py-0.5 text-white font-bitrank">
               <span>Kayque</span>
               <span className="opacity-80">Alberto</span>
             </div>

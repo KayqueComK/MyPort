@@ -35,13 +35,13 @@
 .work-description-card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  max-width: 420px;
-  background: rgba(248, 247, 244, 0.85);
+  gap: 0.9rem;
+  max-width: 460px;
+  background: rgba(248, 247, 244, 0.9);
   border: 1px solid rgba(0, 87, 255, 0.2);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 10px 30px -10px rgba(0, 87, 255, 0.08);
+  border-radius: 18px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 12px 35px -10px rgba(0, 87, 255, 0.1);
   will-change: opacity, transform;
 }
 

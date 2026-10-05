@@ -72,28 +72,22 @@ export default function Home() {
               <span className="font-bitrank text-white pr-2">Kayque Alberto</span>
             </motion.h1>
             <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight mt-2 md:mt-6 text-white/90 font-creator-genius">
-              Seja bem vindo ao meu{" "}
+              Seja bem-vindo ao meu{" "}
               <Link
                 href="/work"
                 className="font-bitrank underline decoration-4 md:decoration-6 underline-offset-8 md:underline-offset-12 decoration-[#2787F5] hover:text-white/80 transition-opacity"
               >
-                portfolio
+                portfólio
               </Link>
             </motion.h1>
           </div>
 
-          <div className="flex flex-col gap-1 mb-8 md:mb-12 pointer-events-auto text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white/90 items-center px-2">
-            <motion.p variants={itemVariants}>Sou estudante de Sistemas e apaixonado por desenvolvimento web</motion.p>
+          <div className="flex flex-col gap-2 mb-8 md:mb-12 pointer-events-auto text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white/90 items-center px-2">
             <motion.p variants={itemVariants}>
-              Católico e Jovem missionario{" "}
-              <a
-                href="https://www.instagram.com/comagape/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline decoration-2 underline-offset-4 decoration-[#0057FF] hover:text-white/80 transition-opacity"
-              >
-                Ágape
-              </a>
+              Desenvolvedor Front-End com olhar de UI/UX Design
+            </motion.p>
+            <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white/80 max-w-2xl">
+              Criando interfaces modernas, interativas e de alta performance com React e Next.js
             </motion.p>
           </div>
 
