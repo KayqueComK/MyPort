@@ -39,22 +39,11 @@ export const translations = {
       greeting: "Olá, eu sou o",
       nameHighlight: "Kayque Alberto",
       introRest:
-        ", desenvolvedor web de Governador Valadares, MG. Curso Sistemas de Informação na UNIVALE e trabalho como Técnico de Suporte em sistemas ERP na Softek, onde resolvo incidentes, escrevo consultas em SQL Server e valido a consistência de dados, além de fazer a ponte entre clientes e o time de desenvolvimento.",
-      p1: "No dia a dia de código, trabalho com JavaScript, TypeScript e Node.js, desenvolvendo APIs RESTful e interfaces com React e Next.js. Gosto de entender o sistema inteiro: do banco de dados e da regra de negócio até a tela que o usuário vê.",
+        ", tenho 21 anos e atualmente moro em Minas Gerais e sou apaixonado por Tecnologia.",
+      p1: "Estudo Sistemas de Informação na UNIVALE no meu dia a dia, escrevo consultas em SQL Server e valido a consistência de dados, além de fazer a ponte entre clientes e o time de desenvolvimento.",
       p2: "Meu projeto mais completo é o Financely, uma plataforma de gestão financeira com autenticação, banco de dados com Prisma, gráficos, cotações de mercado e exportação de relatórios. Também tenho um estudo de CRUD com APIs REST em Node.js, um dashboard Kanban com Pomodoro e este portfólio, onde exploro shaders e modelagem 3D na web.",
       p3: "Meu objetivo é atuar como desenvolvedor júnior, construindo sistemas bem estruturados, testados e documentados, que tornem o dia a dia das pessoas mais simples.",
       p4: "Fora do código, sou músico (violão, guitarra, cajon e cavaquinho) e voluntário há anos na Fraternidade O Caminho e na Comunidade Missionária Católica Ágape (grupo Lolek), experiências que me ensinaram escuta, resiliência e trabalho em equipe.",
-      experienceTitle: "Experiência",
-      exp1Role: "Técnico de Suporte ERP",
-      exp1Company: "Softek Automação",
-      exp1Period: "mai/2026 – hoje",
-      exp1Desc:
-        "Resolução de incidentes em ERP, escrita de consultas SQL Server, validação de consistência de dados e alinhamento direto com o time de desenvolvimento.",
-      exp2Role: "Vendedor Consultivo",
-      exp2Company: "Livraria João Paulo II",
-      exp2Period: "set/2025 – mar/2026",
-      exp2Desc:
-        "Atendimento consultivo, gestão de carteira de leads em CRM e comunicação com clientes, desenvolvendo escuta ativa e trabalho em equipe.",
       skillsTitle: "Habilidades & Tecnologias",
       skillsCat1: "Back-end",
       skillsCat2: "Front-end",
@@ -236,8 +225,8 @@ export const translations = {
 
 const LanguageContext = createContext<LanguageContextType>({
   language: "pt",
-  setLanguage: () => {},
-  toggleLanguage: () => {},
+  setLanguage: () => { },
+  toggleLanguage: () => { },
   t: () => "",
 });
 
