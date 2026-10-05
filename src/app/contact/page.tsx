@@ -2,13 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    document.title = "Contato | Kayque Alberto";
-  }, []);
+    document.title = t("contact.pageTitle");
+  }, [t]);
 
   const email = "Kayquealberto@hotmail.com";
 
@@ -49,21 +51,21 @@ export default function Contact() {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-6 shadow-sm"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span>Disponível para novas oportunidades &amp; freelance</span>
+          <span>{t("contact.status")}</span>
         </motion.div>
 
         <motion.h1
           variants={itemVariants}
           className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 tracking-tighter text-[var(--foreground)]"
         >
-          Vamos conversar.
+          {t("contact.title")}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
           className="text-base sm:text-xl md:text-2xl font-light mb-10 md:mb-14 opacity-80 max-w-2xl px-2 leading-relaxed"
         >
-          Interessado em trabalhar juntos, tem uma oportunidade em mente ou quer falar sobre desenvolvimento? Sinta-se à vontade para me enviar um e-mail ou baixar meu currículo.
+          {t("contact.description")}
         </motion.p>
 
         {/* E-mail de Destaque com Ação de Copiar */}
@@ -81,7 +83,7 @@ export default function Contact() {
             onClick={handleCopy}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(27,27,27,0.15)] text-xs font-semibold hover:border-[var(--primary)] hover:text-[var(--primary)] transition-all cursor-pointer bg-white/60 shadow-sm"
           >
-            <span>{copied ? "✓ E-mail Copiado!" : "Copiar E-mail"}</span>
+            <span>{copied ? t("contact.copiedEmailBtn") : t("contact.copyEmailBtn")}</span>
           </button>
         </motion.div>
 
@@ -89,10 +91,10 @@ export default function Contact() {
         <motion.div variants={itemVariants} className="mb-12 md:mb-16">
           <a
             href="/curriculo-kayque-alberto.pdf"
-            download="Curriculo-Kayque-Alberto.pdf"
+            download={t("contact.cvFileName")}
             className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[var(--primary)] text-white text-base md:text-lg font-semibold shadow-lg shadow-[#0057FF]/25 hover:shadow-xl hover:shadow-[#0057FF]/40 hover:scale-105 active:scale-95 transition-all duration-300"
           >
-            <span>↓ Baixar Currículo (PDF)</span>
+            <span>{t("contact.downloadCvBtn")}</span>
           </a>
         </motion.div>
 

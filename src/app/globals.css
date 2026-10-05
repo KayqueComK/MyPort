@@ -16,6 +16,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'OpenSauceSans';
+  src: url('/open-sauce.sans-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-primary: #0057FF;
   --color-secondary: #F8F7F4;
@@ -24,6 +32,7 @@
   --font-sans: var(--font-inter);
   --font-bitrank: 'Bitrank', sans-serif;
   --font-creator-genius: 'CreatorGenius', sans-serif;
+  --font-open-sauce: 'OpenSauceSans', sans-serif;
 }
 
 .font-bitrank {
@@ -32,6 +41,10 @@
 
 .font-creator-genius {
   font-family: 'CreatorGenius', sans-serif;
+}
+
+.font-open-sauce {
+  font-family: 'OpenSauceSans', sans-serif;
 }
 
 :root {

@@ -4,15 +4,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import "./work.css";
+import { useLanguage } from "@/context/LanguageContext";
+import {
+  ExportSquare,
+  Code,
+  DirectRight,
+  Key,
+  Flash,
+  ArrowRight2,
+  ArrowUp2,
+  ArrowDown2,
+} from "iconsax-react";
 
-/* ─────────────────────────────────────────────────────────────
-   ✏️  PROJECTS — Edit this array to add / change your projects.
-   Each project has:
-     • title       — project name shown in the list
-     • category    — tag shown on the right (e.g. "UX/UI Design")
-     • description — short text shown in the left panel on hover
-     • link        — URL the project links to (external or internal)
-   ───────────────────────────────────────────────────────────── */
 const projects = [
   {
     id: "financely",
@@ -70,14 +73,22 @@ const projects = [
 ];
 
 export default function Work() {
+  const { t } = useLanguage();
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [expandedMobileIndex, setExpandedMobileIndex] = useState<number | null>(0);
 
   useEffect(() => {
-    document.title = "Trabalhos | Kayque Alberto";
-  }, []);
+    document.title = t("work.pageTitle");
+  }, [t]);
 
-  const activeProject = projects[selectedIndex] || projects[0];
+  const rawActiveProject = projects[selectedIndex] || projects[0];
+  const activeProject = {
+    ...rawActiveProject,
+    title: t(`work.projects.${rawActiveProject.id}.title`) || rawActiveProject.title,
+    category: t(`work.projects.${rawActiveProject.id}.category`) || rawActiveProject.category,
+    problem: t(`work.projects.${rawActiveProject.id}.problem`) || rawActiveProject.problem,
+    description: t(`work.projects.${rawActiveProject.id}.description`) || rawActiveProject.description,
+  };
 
   /* ── Framer Motion variants ── */
   const containerVariants: Variants = {
@@ -129,70 +140,85 @@ export default function Work() {
             exit="exit"
             className="work-description-card"
           >
-            <div className="flex items-center justify-between gap-2">
-              <span className="work-description-category">
+            {/* Header: Category & Badge */}
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-[11px] font-bold tracking-widest uppercase text-[var(--primary)] bg-blue-50/80 px-3 py-1 rounded-full border border-blue-200/50">
                 {activeProject.category}
               </span>
               {activeProject.featured && (
-                <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-[var(--primary)] text-white rounded-full">
-                  Destaque
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-blue-600 to-[#0057FF] text-white rounded-full shadow-sm shadow-blue-500/30">
+                  <Flash size="12" variant="Bold" className="text-white" />
+                  <span>{t("work.featuredBadge")}</span>
                 </span>
               )}
             </div>
 
-            <h3 className="work-description-title">
+            {/* Title */}
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[var(--foreground)]">
               {activeProject.title}
             </h3>
 
-            <div className="text-xs font-semibold text-[var(--foreground)] opacity-90 bg-neutral-200/50 p-2.5 rounded-lg border border-[rgba(0,87,255,0.15)] leading-relaxed">
-              <span className="text-[var(--primary)] font-bold">🎯 Problema que resolve:</span>{" "}
-              {activeProject.problem}
+            {/* Problem Box */}
+            <div className="rounded-xl p-3.5 bg-blue-50/60 border border-blue-200/60 flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed text-[var(--foreground)] shadow-xs">
+              <DirectRight size="18" variant="Bold" className="text-[var(--primary)] shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-[var(--primary)] font-bold mr-1.5">
+                  {t("work.problemLabel")}
+                </strong>
+                <span className="opacity-90">{activeProject.problem}</span>
+              </div>
             </div>
 
-            <p className="work-description-text">
+            {/* Description */}
+            <p className="text-xs sm:text-sm leading-relaxed opacity-80 text-[var(--foreground)]">
               {activeProject.description}
             </p>
 
-            {/* Tags de tecnologias */}
+            {/* Technology tags */}
             <div className="flex flex-wrap gap-1.5 pt-1">
               {activeProject.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 text-[11px] font-semibold bg-white/80 border border-[rgba(27,27,27,0.1)] rounded-md text-[var(--foreground)]"
+                  className="px-2.5 py-1 text-[11px] font-semibold bg-white/90 border border-neutral-200/90 rounded-lg text-neutral-800 shadow-2xs hover:border-[var(--primary)] hover:text-[var(--primary)] transition-all"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            {/* Credenciais demo se houver */}
+            {/* Demo Credentials (if any) */}
             {activeProject.demoCredentials && (
-              <div className="text-xs bg-blue-50 border border-blue-200 text-blue-900 p-2.5 rounded-lg flex flex-col gap-0.5">
-                <span className="font-bold text-[var(--primary)]">💡 Acesso para teste (Demo):</span>
-                <code className="font-mono text-[11px] font-semibold">{activeProject.demoCredentials}</code>
+              <div className="rounded-xl p-3 bg-amber-50/70 border border-amber-200/80 text-amber-950 flex items-start gap-2.5 text-xs shadow-2xs">
+                <Key size="18" variant="Bold" className="text-amber-600 shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1 w-full">
+                  <span className="font-bold text-amber-900">{t("work.demoLabel")}</span>
+                  <code className="font-mono text-[11px] font-bold bg-white/90 px-2.5 py-1 rounded-md border border-amber-200 text-amber-950 select-all w-fit">
+                    {activeProject.demoCredentials}
+                  </code>
+                </div>
               </div>
             )}
 
-            {/* Links de ação */}
+            {/* Action Buttons */}
             <div className="flex items-center gap-3 pt-2">
               <Link
                 href={activeProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)] text-white text-xs font-bold shadow-sm hover:bg-[#0047d4] transition-colors"
+                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--primary)] text-white text-xs font-bold shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
-                <span>Acessar Projeto</span>
-                <span>↗</span>
+                <span>{t("work.liveProjectBtn")}</span>
+                <ExportSquare size="15" variant="Bold" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
               {activeProject.github && (
                 <Link
                   href={activeProject.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(27,27,27,0.2)] text-[var(--foreground)] text-xs font-bold hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-neutral-300 bg-white/80 backdrop-blur text-[var(--foreground)] text-xs font-bold hover:border-[var(--primary)] hover:text-[var(--primary)] hover:bg-white transition-all shadow-xs"
                 >
-                  <span>Ver Código</span>
-                  <span>↗</span>
+                  <span>{t("work.viewCodeBtn")}</span>
+                  <Code size="16" variant="Bold" className="group-hover:scale-110 transition-transform" />
                 </Link>
               )}
             </div>
@@ -209,13 +235,20 @@ export default function Work() {
       >
         {/* Header */}
         <motion.div variants={itemVariants} className="work-header">
-          <h1 className="work-title">Trabalhos</h1>
+          <h1 className="work-title">{t("work.title")}</h1>
           <span className="work-count">{projects.length}</span>
         </motion.div>
 
         {/* List */}
         <ul className="work-list">
-          {projects.map((project, i) => {
+          {projects.map((rawProject, i) => {
+            const project = {
+              ...rawProject,
+              title: t(`work.projects.${rawProject.id}.title`) || rawProject.title,
+              category: t(`work.projects.${rawProject.id}.category`) || rawProject.category,
+              problem: t(`work.projects.${rawProject.id}.problem`) || rawProject.problem,
+              description: t(`work.projects.${rawProject.id}.description`) || rawProject.description,
+            };
             const isSelected = selectedIndex === i;
             const isMobileExpanded = expandedMobileIndex === i;
 
@@ -228,13 +261,16 @@ export default function Work() {
                   onClick={() => toggleMobileExpand(i)}
                 >
                   <div className="work-list-item-left">
-                    <span className="work-list-arrow">→</span>
+                    <span className="work-list-arrow text-[var(--primary)]">
+                      <ArrowRight2 size="18" variant="Bold" />
+                    </span>
                     <div>
                       <h2 className="work-list-name flex items-center gap-2">
                         {project.title}
                         {project.featured && (
-                          <span className="md:hidden text-[9px] px-2 py-0.5 rounded-full bg-[var(--primary)] text-white font-bold uppercase tracking-wider">
-                            Destaque
+                          <span className="md:hidden inline-flex items-center gap-1 text-[9px] px-2 py-0.5 rounded-full bg-[var(--primary)] text-white font-bold uppercase tracking-wider">
+                            <Flash size="10" variant="Bold" className="text-white" />
+                            <span>{t("work.featuredBadge")}</span>
                           </span>
                         )}
                       </h2>
@@ -242,8 +278,12 @@ export default function Work() {
                   </div>
                   <div className="flex items-center gap-2">
                     <p className="work-list-category">{project.category}</p>
-                    <span className="md:hidden text-xs opacity-50 font-bold ml-1">
-                      {isMobileExpanded ? "▲" : "▼"}
+                    <span className="md:hidden flex items-center justify-center w-6 h-6 rounded-full bg-neutral-200/50 text-[var(--foreground)] ml-1">
+                      {isMobileExpanded ? (
+                        <ArrowUp2 size="13" variant="Bold" />
+                      ) : (
+                        <ArrowDown2 size="13" variant="Bold" />
+                      )}
                     </span>
                   </div>
                 </div>
@@ -256,11 +296,16 @@ export default function Work() {
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.25 }}
-                      className="md:hidden pb-5 px-1 space-y-3 overflow-hidden text-sm"
+                      className="md:hidden pb-5 pt-2 px-3.5 space-y-3.5 overflow-hidden text-sm rounded-2xl bg-white/70 border border-[rgba(0,87,255,0.12)] my-2"
                     >
-                      <div className="p-2.5 rounded-lg bg-neutral-200/60 border border-[rgba(0,87,255,0.15)] text-xs leading-relaxed">
-                        <span className="text-[var(--primary)] font-bold">🎯 Problema que resolve:</span>{" "}
-                        {project.problem}
+                      <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-200/60 text-xs leading-relaxed flex items-start gap-2">
+                        <DirectRight size="16" variant="Bold" className="text-[var(--primary)] shrink-0 mt-0.5" />
+                        <div>
+                          <strong className="text-[var(--primary)] font-bold mr-1">
+                            {t("work.problemLabel")}
+                          </strong>
+                          <span className="opacity-90">{project.problem}</span>
+                        </div>
                       </div>
 
                       <p className="text-xs sm:text-sm opacity-80 leading-relaxed">
@@ -271,7 +316,7 @@ export default function Work() {
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2 py-0.5 text-[10px] font-semibold bg-white border border-[rgba(27,27,27,0.1)] rounded-md text-[var(--foreground)]"
+                            className="px-2 py-0.5 text-[10px] font-semibold bg-white border border-neutral-200 rounded-md text-[var(--foreground)] shadow-2xs"
                           >
                             {tag}
                           </span>
@@ -279,9 +324,14 @@ export default function Work() {
                       </div>
 
                       {project.demoCredentials && (
-                        <div className="text-xs bg-blue-50 border border-blue-200 text-blue-900 p-2.5 rounded-lg flex flex-col gap-0.5">
-                          <span className="font-bold text-[var(--primary)]">💡 Acesso demo:</span>
-                          <code className="font-mono text-[11px] font-semibold">{project.demoCredentials}</code>
+                        <div className="text-xs bg-amber-50/80 border border-amber-200 text-amber-950 p-2.5 rounded-xl flex items-start gap-2">
+                          <Key size="16" variant="Bold" className="text-amber-600 shrink-0 mt-0.5" />
+                          <div className="flex flex-col gap-0.5">
+                            <span className="font-bold text-amber-900">{t("work.demoLabel")}</span>
+                            <code className="font-mono text-[11px] font-bold bg-white/90 px-2 py-0.5 rounded border border-amber-200/60 select-all">
+                              {project.demoCredentials}
+                            </code>
+                          </div>
                         </div>
                       )}
 
@@ -292,18 +342,18 @@ export default function Work() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[var(--primary)] text-white text-xs font-bold shadow-sm"
                         >
-                          <span>Acessar Projeto</span>
-                          <span>↗</span>
+                          <span>{t("work.liveProjectBtn")}</span>
+                          <ExportSquare size="14" variant="Bold" />
                         </Link>
                         {project.github && (
                           <Link
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[rgba(27,27,27,0.2)] text-[var(--foreground)] text-xs font-bold"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-300 bg-white text-[var(--foreground)] text-xs font-bold"
                           >
-                            <span>Código</span>
-                            <span>↗</span>
+                            <span>{t("work.codeShortBtn")}</span>
+                            <Code size="14" variant="Bold" />
                           </Link>
                         )}
                       </div>
@@ -317,16 +367,16 @@ export default function Work() {
 
         {/* Contact CTA & Footer */}
         <motion.div variants={itemVariants} className="mt-12 pt-8 border-t border-[rgba(27,27,27,0.1)] flex flex-col items-center gap-4">
-          <p className="text-sm font-medium opacity-70 text-center">Gostou dos projetos ou tem uma ideia em mente?</p>
+          <p className="text-sm font-medium opacity-70 text-center">{t("work.ctaQuestion")}</p>
           <Link
             href="/contact"
             className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[var(--primary)] text-white text-base md:text-lg font-semibold shadow-lg shadow-[#0057FF]/25 hover:shadow-xl hover:shadow-[#0057FF]/40 hover:scale-105 active:scale-95 transition-all duration-300"
           >
-            <span>Me contatar</span>
+            <span>{t("work.contactBtn")}</span>
             <span className="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
           </Link>
           <p className="work-footer mt-4">
-            Projetado &amp; codado por KIQ © {new Date().getFullYear()}
+            {t("work.footerCredits")} © {new Date().getFullYear()}
           </p>
         </motion.div>
       </motion.div>

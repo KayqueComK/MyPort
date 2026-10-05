@@ -5,16 +5,18 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HambergerMenu, CloseSquare } from "iconsax-react";
-
-const navLinks = [
-  { name: "Início", href: "/" },
-  { name: "Trabalhos", href: "/work" },
-  { name: "Sobre", href: "/about" },
-  { name: "Contato", href: "/contact" },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { name: t("header.home"), href: "/" },
+    { name: t("header.work"), href: "/work" },
+    { name: t("header.about"), href: "/about" },
+    { name: t("header.contact"), href: "/contact" },
+  ];
 
   return (
     <>
@@ -32,17 +34,41 @@ export default function Header() {
               className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform brightness-0 invert drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]"
               priority
             />
-            <div className="hidden md:flex flex-col text-xs font-medium tracking-widest uppercase leading-tight border-l border-white/30 pl-3.5 py-0.5 text-white font-bitrank">
-              <span>Kayque</span>
-              <span className="opacity-80">Alberto</span>
+            <div className="flex flex-col text-[11px] md:text-xs font-medium tracking-widest uppercase leading-tight border-l border-white/40 pl-3 md:pl-3.5 py-0.5 text-white font-open-sauce">
+              <span className="text-white text-[#ffffff]">Kayque</span>
+              <span className="text-white text-[#ffffff]">Alberto</span>
             </div>
           </Link>
         </div>
 
-        <div className="flex items-center gap-6 pointer-events-auto text-white">
-          <button className="text-xs font-bold tracking-widest hover:opacity-70 transition-opacity">
-            PT
-          </button>
+        <div className="flex items-center gap-4 md:gap-6 pointer-events-auto text-white">
+          {/* Seletor PT | EN com glassmorphism */}
+          <div className="flex items-center text-xs font-bold tracking-widest bg-black/30 backdrop-blur-md border border-white/15 rounded-full px-3 py-1.5 gap-2 shadow-sm">
+            <button
+              onClick={() => setLanguage("pt")}
+              className={`transition-colors cursor-pointer ${
+                language === "pt"
+                  ? "text-white font-extrabold underline underline-offset-4 decoration-[var(--primary)]"
+                  : "text-white/40 hover:text-white/80"
+              }`}
+              aria-label="Alterar para Português"
+            >
+              PT
+            </button>
+            <span className="text-white/30 text-[10px]">|</span>
+            <button
+              onClick={() => setLanguage("en")}
+              className={`transition-colors cursor-pointer ${
+                language === "en"
+                  ? "text-white font-extrabold underline underline-offset-4 decoration-[var(--primary)]"
+                  : "text-white/40 hover:text-white/80"
+              }`}
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+          </div>
+
           <button
             onClick={() => setIsMenuOpen(true)}
             className="hover:scale-110 transition-transform"
@@ -97,11 +123,37 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.3 }}
-              className="mt-20 flex gap-8 text-sm md:text-base uppercase tracking-widest font-medium"
+              className="mt-16 md:mt-20 flex flex-wrap items-center justify-between gap-6 border-t border-[rgba(27,27,27,0.12)] pt-6 text-sm md:text-base uppercase tracking-widest font-medium"
             >
-              <a href="#" className="hover:underline underline-offset-4 decoration-[var(--primary)]">Instagram</a>
-              <a href="#" className="hover:underline underline-offset-4 decoration-[var(--primary)]">Behance</a>
-              <a href="#" className="hover:underline underline-offset-4 decoration-[var(--primary)]">LinkedIn</a>
+              <div className="flex gap-6 md:gap-8">
+                <a href="https://www.instagram.com/k.ayqueal/" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4 decoration-[var(--primary)]">Instagram</a>
+                <a href="https://github.com/KayqueComK" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4 decoration-[var(--primary)]">GitHub</a>
+                <a href="https://www.linkedin.com/in/kayque-alberto-937a08230/" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4 decoration-[var(--primary)]">LinkedIn</a>
+              </div>
+
+              <div className="flex items-center text-xs font-bold tracking-widest bg-neutral-200/60 border border-[rgba(27,27,27,0.1)] rounded-full px-3 py-1.5 gap-2">
+                <button
+                  onClick={() => setLanguage("pt")}
+                  className={`transition-colors cursor-pointer ${
+                    language === "pt"
+                      ? "text-[var(--primary)] font-extrabold underline underline-offset-4"
+                      : "text-[var(--foreground)] opacity-50 hover:opacity-100"
+                  }`}
+                >
+                  PT
+                </button>
+                <span className="opacity-30 text-[10px]">|</span>
+                <button
+                  onClick={() => setLanguage("en")}
+                  className={`transition-colors cursor-pointer ${
+                    language === "en"
+                      ? "text-[var(--primary)] font-extrabold underline underline-offset-4"
+                      : "text-[var(--foreground)] opacity-50 hover:opacity-100"
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         )}
