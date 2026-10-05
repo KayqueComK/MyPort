@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Kayque Alberto",
   },
   description:
-    "Desenvolvedor web de Governador Valadares, MG. Criação de APIs RESTful e interfaces modernas com React, Next.js e Node.js.",
+    "Portfólio de Kayque Alberto, desenvolvedor web com JavaScript, TypeScript, Node.js e Next.js.",
   icons: {
     icon: "/icon.png",
   },

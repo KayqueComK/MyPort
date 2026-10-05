@@ -32,11 +32,6 @@ export default function About() {
     },
   };
 
-  const designSkills =
-    language === "pt"
-      ? ["Figma", "UI/UX Design", "Design Systems", "Prototipagem", "Identidade Visual"]
-      : ["Figma", "UI/UX Design", "Design Systems", "Prototyping", "Visual Identity"];
-
   return (
     <div className="flex-1 flex flex-col pt-24 md:pt-32 px-4 sm:px-6 md:px-20 lg:px-40 pb-12 md:pb-20">
       <motion.div
@@ -78,7 +73,7 @@ export default function About() {
             <div className="absolute inset-0 z-30 pointer-events-none">
               <Image
                 src="/moldura-paint.png"
-                alt="Moldura retrô de pintura estilo MS Paint"
+                alt="Moldura de janela clássica do programa MS Paint vintage contornando a foto de perfil"
                 fill
                 className="object-contain"
                 priority
@@ -101,46 +96,6 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* ── Trajetória & Experiência ── */}
-        <motion.div variants={itemVariants} className="mb-12 md:mb-16">
-          <h2 className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[var(--text)] opacity-60 mb-6">
-            {t("about.trajectoryTitle")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-5 rounded-2xl border border-[rgba(27,27,27,0.1)] bg-white/40 shadow-sm flex flex-col justify-between">
-              <div>
-                <span className="text-xs font-semibold text-[var(--primary)] uppercase tracking-wider">{t("about.card1Badge")}</span>
-                <h3 className="text-lg font-bold mt-1 text-[var(--foreground)]">{t("about.card1Title")}</h3>
-                <p className="text-xs font-semibold opacity-60 mt-0.5">{t("about.card1Sub")}</p>
-                <p className="text-xs sm:text-sm opacity-75 mt-2 leading-relaxed">
-                  {t("about.card1Desc")}
-                </p>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-2xl border border-[rgba(27,27,27,0.1)] bg-white/40 shadow-sm flex flex-col justify-between">
-              <div>
-                <span className="text-xs font-semibold text-[var(--primary)] uppercase tracking-wider">{t("about.card2Badge")}</span>
-                <h3 className="text-lg font-bold mt-1 text-[var(--foreground)]">{t("about.card2Title")}</h3>
-                <p className="text-xs font-semibold opacity-60 mt-0.5">{t("about.card2Sub")}</p>
-                <p className="text-xs sm:text-sm opacity-75 mt-2 leading-relaxed">
-                  {t("about.card2Desc")}
-                </p>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-2xl border border-[rgba(27,27,27,0.1)] bg-white/40 shadow-sm flex flex-col justify-between">
-              <div>
-                <span className="text-xs font-semibold text-[var(--primary)] uppercase tracking-wider">{t("about.card3Badge")}</span>
-                <h3 className="text-lg font-bold mt-1 text-[var(--foreground)]">{t("about.card3Title")}</h3>
-                <p className="text-xs font-semibold opacity-60 mt-0.5">{t("about.card3Sub")}</p>
-                <p className="text-xs sm:text-sm opacity-75 mt-2 leading-relaxed">
-                  {t("about.card3Desc")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
         {/* ── Habilidades Agrupadas ── */}
         <motion.div variants={itemVariants} className="flex flex-col gap-6 mb-12 md:mb-16">
@@ -154,7 +109,7 @@ export default function About() {
                 {t("about.skillsCat1")}
               </h3>
               <div className="flex flex-wrap gap-2.5">
-                {["React", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Framer Motion", "Three.js"].map((skill) => (
+                {["Node.js", language === "pt" ? "APIs REST" : "REST APIs", "SQL Server", "MySQL"].map((skill) => (
                   <span
                     key={skill}
                     className="px-4 py-2 border border-[rgba(27,27,27,0.15)] bg-white/60 rounded-full text-xs sm:text-sm font-medium tracking-wide hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors cursor-default"
@@ -170,7 +125,7 @@ export default function About() {
                 {t("about.skillsCat2")}
               </h3>
               <div className="flex flex-wrap gap-2.5">
-                {designSkills.map((skill) => (
+                {["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js"].map((skill) => (
                   <span
                     key={skill}
                     className="px-4 py-2 border border-[rgba(27,27,27,0.15)] bg-white/60 rounded-full text-xs sm:text-sm font-medium tracking-wide hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors cursor-default"
@@ -186,7 +141,7 @@ export default function About() {
                 {t("about.skillsCat3")}
               </h3>
               <div className="flex flex-wrap gap-2.5">
-                {["Git & GitHub", "Docker", "Prisma ORM", "PostgreSQL", "REST APIs"].map((skill) => (
+                {["Git", "GitHub", "Figma"].map((skill) => (
                   <span
                     key={skill}
                     className="px-4 py-2 border border-[rgba(27,27,27,0.15)] bg-white/60 rounded-full text-xs sm:text-sm font-medium tracking-wide hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors cursor-default"

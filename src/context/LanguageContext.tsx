@@ -8,7 +8,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   toggleLanguage: () => void;
-  t: (key: string) => any;
+  t: (key: string) => string;
 }
 
 export const translations = {
@@ -22,13 +22,13 @@ export const translations = {
       menuClose: "Fechar menu",
     },
     home: {
-      greeting: "Olá sou o",
+      greeting: "Olá, sou o",
       name: "Kayque Alberto",
       welcome: "Seja bem-vindo ao meu",
       portfolio: "portfólio",
-      role: "Desenvolvedor Front-End com olhar de UI/UX Design",
+      role: "Desenvolvedor Web",
       subtitle:
-        "Criando interfaces modernas, interativas e de alta performance com React e Next.js",
+        "Estudante de Sistemas de Informação e desenvolvedor web. Crio aplicações com JavaScript, TypeScript, Node.js e Next.js.",
       viewProjects: "Ver meus projetos",
       aboutMe: "Mais sobre mim",
       contactMe: "Me contatar",
@@ -43,27 +43,22 @@ export const translations = {
       p1: "No dia a dia de código, trabalho com JavaScript, TypeScript e Node.js, desenvolvendo APIs RESTful e interfaces com React e Next.js. Gosto de entender o sistema inteiro: do banco de dados e da regra de negócio até a tela que o usuário vê.",
       p2: "Meu projeto mais completo é o Financely, uma plataforma de gestão financeira com autenticação, banco de dados com Prisma, gráficos, cotações de mercado e exportação de relatórios. Também tenho um estudo de CRUD com APIs REST em Node.js, um dashboard Kanban com Pomodoro e este portfólio, onde exploro shaders e modelagem 3D na web.",
       p3: "Meu objetivo é atuar como desenvolvedor júnior, construindo sistemas bem estruturados, testados e documentados, que tornem o dia a dia das pessoas mais simples.",
-      p4: "Fora do código, sou músico (violão, guitarra, cajon e cavaquinho) e voluntário há anos na Fraternidade O Caminho e na Comunidade Ágape, experiências que me ensinaram escuta, resiliência e trabalho em equipe.",
-      trajectoryTitle: "Trajetória & Experiência",
-      card1Badge: "Atuação Atual",
-      card1Title: "Técnico de Suporte ERP",
-      card1Sub: "Softek Automação • Governador Valadares, MG",
-      card1Desc:
+      p4: "Fora do código, sou músico (violão, guitarra, cajon e cavaquinho) e voluntário há anos na Fraternidade O Caminho e na Comunidade Missionária Católica Ágape (grupo Lolek), experiências que me ensinaram escuta, resiliência e trabalho em equipe.",
+      experienceTitle: "Experiência",
+      exp1Role: "Técnico de Suporte ERP",
+      exp1Company: "Softek Automação",
+      exp1Period: "mai/2026 – hoje",
+      exp1Desc:
         "Resolução de incidentes em ERP, escrita de consultas SQL Server, validação de consistência de dados e alinhamento direto com o time de desenvolvimento.",
-      card2Badge: "Formação Acadêmica",
-      card2Title: "Sistemas de Informação",
-      card2Sub: "UNIVALE (Universidade Vale do Rio Doce)",
-      card2Desc:
-        "Graduação em andamento com foco em estruturas de dados, banco de dados, engenharia de software e processos (BPM).",
-      card3Badge: "Foco & Prática",
-      card3Title: "Desenvolvimento Web",
-      card3Sub: "JavaScript, TypeScript, React, Next.js & Node.js",
-      card3Desc:
-        "Desenvolvimento de APIs RESTful e interfaces web modernas, unindo regra de negócio, bancos relacionais e código limpo.",
+      exp2Role: "Vendedor Consultivo",
+      exp2Company: "Livraria João Paulo II",
+      exp2Period: "set/2025 – mar/2026",
+      exp2Desc:
+        "Atendimento consultivo, gestão de carteira de leads em CRM e comunicação com clientes, desenvolvendo escuta ativa e trabalho em equipe.",
       skillsTitle: "Habilidades & Tecnologias",
-      skillsCat1: "Front-End & Animação",
-      skillsCat2: "UI/UX & Design Visual",
-      skillsCat3: "Back-End & Ferramentas",
+      skillsCat1: "Back-end",
+      skillsCat2: "Front-end",
+      skillsCat3: "Ferramentas",
       ctaQuestion: "Quer ver o resultado prático dessas habilidades?",
       ctaProjects: "Ver projetos",
       ctaContact: "Contato",
@@ -137,13 +132,13 @@ export const translations = {
       menuClose: "Close menu",
     },
     home: {
-      greeting: "Hi, I am",
+      greeting: "Hello, I am",
       name: "Kayque Alberto",
       welcome: "Welcome to my",
       portfolio: "portfolio",
-      role: "Front-End Developer with a UI/UX Design eye",
+      role: "Web Developer",
       subtitle:
-        "Building modern, interactive, and high-performance interfaces with React and Next.js",
+        "Information Systems student and web developer. Building applications with JavaScript, TypeScript, Node.js, and Next.js.",
       viewProjects: "View my projects",
       aboutMe: "More about me",
       contactMe: "Get in touch",
@@ -158,27 +153,22 @@ export const translations = {
       p1: "In day-to-day coding, I work with JavaScript, TypeScript, and Node.js, building RESTful APIs and interfaces with React and Next.js. I love understanding the entire system: from the database and business logic to what the user sees on screen.",
       p2: "My most comprehensive project is Financely, a financial management platform with user authentication, a Prisma-backed database, interactive charts, market quotes, and report exports. I also have a REST API CRUD study in Node.js, a Kanban dashboard with Pomodoro, and this portfolio, where I explore web shaders and 3D modeling.",
       p3: "My goal is to work as a junior developer, building well-structured, tested, and documented software that simplifies people's everyday lives.",
-      p4: "Outside of code, I am a musician (acoustic guitar, electric guitar, cajón, and cavaquinho) and a long-time volunteer at Fraternidade O Caminho and Comunidade Ágape—experiences that taught me active listening, resilience, and teamwork.",
-      trajectoryTitle: "Journey & Experience",
-      card1Badge: "Current Role",
-      card1Title: "ERP Support Technician",
-      card1Sub: "Softek Automação • Governador Valadares, MG, Brazil",
-      card1Desc:
+      p4: "Outside of code, I am a musician (acoustic guitar, electric guitar, cajón, and cavaquinho) and a long-time volunteer at Fraternidade O Caminho and Comunidade Missionária Católica Ágape (Lolek group)—experiences that taught me active listening, resilience, and teamwork.",
+      experienceTitle: "Experience",
+      exp1Role: "ERP Support Technician",
+      exp1Company: "Softek Automação",
+      exp1Period: "May 2026 – Present",
+      exp1Desc:
         "Troubleshooting ERP incidents, writing SQL Server queries, validating data consistency, and directly collaborating with the engineering team.",
-      card2Badge: "Academic Background",
-      card2Title: "Information Systems",
-      card2Sub: "UNIVALE (Vale do Rio Doce University)",
-      card2Desc:
-        "Bachelor's degree in progress focusing on data structures, databases, software engineering, and business processes (BPM).",
-      card3Badge: "Focus & Practice",
-      card3Title: "Web Development",
-      card3Sub: "JavaScript, TypeScript, React, Next.js & Node.js",
-      card3Desc:
-        "Building RESTful APIs and modern web interfaces, bridging business logic, relational databases, and clean code.",
+      exp2Role: "Consultative Sales Representative",
+      exp2Company: "Livraria João Paulo II",
+      exp2Period: "Sep 2025 – Mar 2026",
+      exp2Desc:
+        "Consultative customer service, CRM lead management, and client communication, building strong active listening and teamwork skills.",
       skillsTitle: "Skills & Technologies",
-      skillsCat1: "Front-End & Motion",
-      skillsCat2: "UI/UX & Visual Design",
-      skillsCat3: "Back-End & Tools",
+      skillsCat1: "Back-end",
+      skillsCat2: "Front-end",
+      skillsCat3: "Tools",
       ctaQuestion: "Want to see these skills in action?",
       ctaProjects: "View projects",
       ctaContact: "Contact",
@@ -271,17 +261,17 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setLanguage(language === "pt" ? "en" : "pt");
   };
 
-  const t = (path: string): any => {
+  const t = (path: string): string => {
     const keys = path.split(".");
-    let current: any = translations[language];
+    let current: unknown = translations[language];
     for (const key of keys) {
       if (current && typeof current === "object" && key in current) {
-        current = current[key];
+        current = (current as Record<string, unknown>)[key];
       } else {
         return path;
       }
     }
-    return current;
+    return typeof current === "string" ? current : path;
   };
 
   return (
