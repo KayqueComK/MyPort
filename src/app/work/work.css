@@ -139,13 +139,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 1.3rem 0;
+  border: 0;
   border-bottom: 1px solid rgba(27, 27, 27, 0.12);
+  background: none;
+  font: inherit;
+  text-align: left;
   text-decoration: none;
   color: var(--text);
   transition: opacity 0.2s ease, transform 0.2s ease;
   cursor: pointer;
   will-change: opacity, transform;
+}
+
+.work-list-item:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 6px;
 }
 
 .work-list-item-left {

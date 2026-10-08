@@ -15,14 +15,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://meuportifolio-flax-three.vercel.app"),
   title: {
     default: "Kayque Alberto - Desenvolvedor Web",
     template: "%s | Kayque Alberto",
   },
   description:
     "Portfólio de Kayque Alberto, desenvolvedor web com JavaScript, TypeScript, Node.js e Next.js.",
+  authors: [{ name: "Kayque Alberto" }],
   icons: {
     icon: "/icon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Kayque Alberto",
+    title: "Kayque Alberto - Desenvolvedor Web",
+    description:
+      "Portfólio de Kayque Alberto, desenvolvedor web com JavaScript, TypeScript, Node.js e Next.js.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kayque Alberto - Desenvolvedor Web",
+    description:
+      "Portfólio de Kayque Alberto, desenvolvedor web com JavaScript, TypeScript, Node.js e Next.js.",
   },
 };
 

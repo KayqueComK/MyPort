@@ -122,10 +122,12 @@ interface BalatroPropTypes {
   mouseInteraction?: boolean;
 }
 
+const DEFAULT_OFFSET: [number, number] = [0.0, 0.0];
+
 export default function Balatro({
   spinRotation = -0.5,
   spinSpeed = 1.8,
-  offset = [0.0, 0.0],
+  offset = DEFAULT_OFFSET,
   color1 = "#DE443B",
   color2 = "#006BB4",
   color3 = "#162325",
@@ -191,14 +193,43 @@ export default function Balatro({
     });
 
     const mesh = new Mesh(gl, { geometry, program });
-    let animationFrameId: number;
+    let animationFrameId = 0;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     function update(time: number) {
-      animationFrameId = requestAnimationFrame(update);
       program.uniforms.iTime.value = time * 0.001;
       renderer.render({ scene: mesh });
+      animationFrameId = requestAnimationFrame(update);
     }
-    animationFrameId = requestAnimationFrame(update);
+
+    function start() {
+      cancelAnimationFrame(animationFrameId);
+      if (reducedMotion.matches) {
+        // Movimento reduzido: desenha apenas um quadro estático.
+        program.uniforms.iTime.value = 0;
+        renderer.render({ scene: mesh });
+        return;
+      }
+      animationFrameId = requestAnimationFrame(update);
+    }
+
+    function handleVisibility() {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrameId);
+      } else {
+        start();
+      }
+    }
+
+    function redrawIfStatic() {
+      if (reducedMotion.matches) renderer.render({ scene: mesh });
+    }
+
+    start();
+    document.addEventListener("visibilitychange", handleVisibility);
+    reducedMotion.addEventListener("change", start);
+    window.addEventListener("resize", redrawIfStatic);
     container.appendChild(gl.canvas);
 
     function handleMouseMove(e: MouseEvent) {
@@ -213,6 +244,9 @@ export default function Balatro({
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", redrawIfStatic);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      reducedMotion.removeEventListener("change", start);
       container.removeEventListener("mousemove", handleMouseMove);
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);

@@ -34,8 +34,8 @@ export default function Header() {
               className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform brightness-0 invert drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]"
               priority
             />
-            <div className="flex flex-col text-[11px] md:text-xs font-medium tracking-widest uppercase leading-tight border-l border-white/40 pl-3 md:pl-3.5 py-0.5 text-white font-open-sauce">
-              <span className="text-white text-[#ffffff]">Kayque</span>
+            <div className="flex flex-col text-[11px] md:text-xs font-normal tracking-widest uppercase leading-tight border-l border-white/40 pl-3 md:pl-3.5 py-0.5 text-white font-inter">
+              <span className="font-bold text-white text-[#ffffff]">Kayque</span>
               <span className="text-white text-[#ffffff]">Alberto</span>
             </div>
           </Link>

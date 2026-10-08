@@ -66,18 +66,18 @@ export default function Home() {
           animate="visible"
           className="max-w-6xl w-full text-center flex flex-col items-center"
         >
-          <div className="flex flex-col gap-2 md:gap-4 mb-6 md:mb-12 pointer-events-auto items-center">
-            <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight text-white font-creator-genius">
-              {t("home.greeting")} <span className="font-bitrank text-white pr-2"></span>
+          <div className="flex flex-col gap-3 md:gap-5 mb-6 md:mb-12 pointer-events-auto items-center">
+            <motion.h1 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white font-lulo">
+              {t("home.greeting")}
             </motion.h1>
-            <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight text-white">
-              <span className="font-bitrank text-white pr-2">Kayque Alberto</span>
+            <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white font-lulo">
+              <span>Kayque Alberto</span>
             </motion.h1>
-            <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight mt-2 md:mt-6 text-white/90 font-creator-genius">
-              {t("home.welcome")}{" "}
+            <motion.h1 variants={itemVariants} className="flex flex-wrap justify-center items-baseline gap-x-3 gap-y-3 sm:gap-y-4 md:gap-y-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mt-2 md:mt-6 text-white font-lulo leading-normal">
+              <span>{t("home.welcome")}</span>
               <Link
                 href="/work"
-                className="font-bitrank underline decoration-4 md:decoration-6 underline-offset-8 md:underline-offset-12 decoration-[#2787F5] hover:text-white/80 transition-opacity"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white underline decoration-4 md:decoration-6 underline-offset-8 md:underline-offset-12 decoration-[#2787F5] hover:text-white/80 transition-opacity inline-block"
               >
                 {t("home.portfolio")}
               </Link>

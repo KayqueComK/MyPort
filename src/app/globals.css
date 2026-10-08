@@ -24,15 +24,46 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'LuloClean';
+  src: url('/Lulo-Clean-W01-One-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LuloClean';
+  src: url('/Lulo-Clean-W01-One-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dantene';
+  src: url('/Dantene.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-primary: #0057FF;
   --color-secondary: #F8F7F4;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
+  --font-inter: var(--font-inter);
   --font-bitrank: 'Bitrank', sans-serif;
   --font-creator-genius: 'CreatorGenius', sans-serif;
   --font-open-sauce: 'OpenSauceSans', sans-serif;
+  --font-lulo: 'LuloClean', sans-serif;
+  --font-dantene: 'Dantene', sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
 }
 
 .font-bitrank {
@@ -45,6 +76,14 @@
 
 .font-open-sauce {
   font-family: 'OpenSauceSans', sans-serif;
+}
+
+.font-lulo {
+  font-family: 'LuloClean', sans-serif;
+}
+
+.font-dantene {
+  font-family: 'Dantene', sans-serif;
 }
 
 :root {
