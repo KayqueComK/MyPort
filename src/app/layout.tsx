@@ -8,6 +8,7 @@ import SplashScreen from "@/components/layout/SplashScreen";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/context/LanguageContext";
+import LanguageScramble from "@/components/layout/LanguageScramble";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
         <LanguageProvider>
           <SplashScreen />
+          <LanguageScramble />
           <NoiseOverlay />
           <CustomCursor />
           <Header />
