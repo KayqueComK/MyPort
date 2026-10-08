@@ -9,6 +9,8 @@ export interface Project {
   link: string;
   github?: string;
   demoCredentials?: string;
+  /** Caminho em /public, ex.: "/projects/financely.png" (16:9). Opcional. */
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -25,6 +27,7 @@ export const projects: Project[] = [
     link: "https://financely-gules.vercel.app/login",
     github: "https://github.com/KayqueComK/financely",
     demoCredentials: "demo@financely.com / demo123",
+    image: "/projects/financely.png",
   },
   {
     id: "kanban",
@@ -38,6 +41,7 @@ export const projects: Project[] = [
     tags: ["JavaScript (ES6+)", "HTML5", "CSS Moderno", "Drag & Drop", "LocalStorage"],
     link: "https://projeto-kanban-com-pomodoro.vercel.app/",
     github: "https://github.com/KayqueComK/Projeto-Kanban-com-pomodoro",
+    image: "/projects/kanban.png",
   },
   {
     id: "skyloft",
@@ -51,6 +55,7 @@ export const projects: Project[] = [
     tags: ["React", "Tailwind CSS", "UI/UX Design", "Figma", "Design Responsivo"],
     link: "https://skylofts.vercel.app/",
     github: "https://github.com/KayqueComK/skylofts",
+    image: "/projects/skyloft.png",
   },
   {
     id: "portfolio",
@@ -60,8 +65,8 @@ export const projects: Project[] = [
     problem:
       "Une design expressivo e engenharia criativa com renderização WebGL em tempo real sem prejudicar performance.",
     description:
-      "Portfólio pessoal construído com Next.js (Turbopack) e animações 3D interativas com Three.js/WebGL. Transições fluidas com Framer Motion, cursor customizado e identidade visual autoral.",
-    tags: ["Next.js", "Three.js", "WebGL", "Framer Motion", "Tailwind CSS", "TypeScript"],
+      "Portfólio pessoal construído com Next.js (Turbopack) e um fundo animado com shaders WebGL via OGL. Transições fluidas com Framer Motion, cursor customizado e identidade visual autoral.",
+    tags: ["Next.js", "OGL", "WebGL", "Framer Motion", "Tailwind CSS", "TypeScript"],
     link: "https://meuportifolio-flax-three.vercel.app/",
     github: "https://github.com/KayqueComK/MyPort",
   },

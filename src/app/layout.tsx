@@ -43,6 +43,19 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Kayque Alberto",
+  jobTitle: "Desenvolvedor Web",
+  url: "https://meuportifolio-flax-three.vercel.app",
+  sameAs: [
+    "https://github.com/KayqueComK",
+    "https://www.linkedin.com/in/kayque-alberto-937a08230/",
+  ],
+  knowsAbout: ["JavaScript", "TypeScript", "Node.js", "Next.js", "React"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,6 +67,12 @@ export default function RootLayout({
       className={`${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <LanguageProvider>
           <SplashScreen />
           <LanguageScramble />

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ExportSquare, Code, DirectRight, Key } from "iconsax-react";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Project } from "@/data/projects";
@@ -9,6 +10,25 @@ interface Props {
   project: Project;
   /** Versão menor, usada na lista expansível do mobile. */
   compact?: boolean;
+}
+
+export function ProjectImage({ project, compact }: Props) {
+  if (!project.image) return null;
+  return (
+    <div
+      className={`relative w-full aspect-video overflow-hidden border border-[rgba(0,87,255,0.12)] bg-neutral-100 ${
+        compact ? "rounded-xl" : "rounded-2xl"
+      }`}
+    >
+      <Image
+        src={project.image}
+        alt={project.title}
+        fill
+        sizes={compact ? "100vw" : "(min-width: 768px) 480px, 100vw"}
+        className="object-cover"
+      />
+    </div>
+  );
 }
 
 export function ProblemBox({ project, compact }: Props) {

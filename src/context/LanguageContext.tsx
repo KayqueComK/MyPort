@@ -95,7 +95,7 @@ export const translations = {
           problem:
             "Une design expressivo e engenharia criativa com renderização WebGL em tempo real sem prejudicar performance.",
           description:
-            "Portfólio pessoal construído com Next.js (Turbopack) e animações 3D interativas com Three.js/WebGL. Transições fluidas com Framer Motion, cursor customizado e identidade visual autoral.",
+            "Portfólio pessoal construído com Next.js (Turbopack) e um fundo animado com shaders WebGL via OGL. Transições fluidas com Framer Motion, cursor customizado e identidade visual autoral.",
         },
       },
     },
@@ -205,7 +205,7 @@ export const translations = {
           problem:
             "Blends expressive design and creative engineering with real-time WebGL rendering without sacrificing performance.",
           description:
-            "Personal portfolio built with Next.js (Turbopack) and interactive 3D WebGL animations via Three.js. Features fluid Framer Motion transitions, custom cursor, and signature identity.",
+            "Personal portfolio built with Next.js (Turbopack) and an animated WebGL shader background via OGL. Features fluid Framer Motion transitions, custom cursor, and signature identity.",
         },
       },
     },

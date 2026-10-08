@@ -1,14 +1,22 @@
-# 🚀 Meu Portfólio Pessoal
+# 🚀 MyPort — Meu Portfólio Pessoal
 
-Bem-vindo ao repositório do meu portfólio web! Este projeto foi desenvolvido para apresentar minha trajetória, habilidades, projetos em destaque e fornecer um canal direto de contato.
+Portfólio web de **Kayque Alberto**, desenvolvedor web. Apresenta minha trajetória, habilidades, projetos em destaque e um canal direto de contato.
 
-🌐 **Acesse o site ao vivo:** [https://meuportifolio-flax-three.vercel.app/](https://meuportifolio-flax-three.vercel.app/)
+🌐 **Site ao vivo:** [https://meuportifolio-flax-three.vercel.app/](https://meuportifolio-flax-three.vercel.app/)
 
 ---
 
 ## 📌 Sobre o Projeto
 
-O portfólio conta com um design moderno, responsivo e interativo, construído com foco em alta performance, animações suaves e elementos visuais envolventes em 3D.
+Design moderno, responsivo e interativo, com foco em performance, acessibilidade e animações suaves.
+
+### ✨ Destaques
+
+- 🌍 **Bilíngue (PT/EN)** com troca de idioma em tempo real.
+- 🎨 **Fundo animado com shaders WebGL** (OGL), que respeita `prefers-reduced-motion` e pausa quando a aba fica oculta.
+- ♿ **Acessível:** lista de projetos navegável por teclado, com `aria-expanded` e foco visível.
+- 🔎 **SEO:** metadados Open Graph/Twitter, imagem de preview gerada por código, `sitemap.xml`, `robots.txt` e dados estruturados (JSON-LD).
+- 📊 **Vercel Analytics e Speed Insights.**
 
 ---
 
@@ -18,19 +26,33 @@ O portfólio conta com um design moderno, responsivo e interativo, construído c
 - **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
 - **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Animações:** [Framer Motion](https://www.framer.com/motion/)
-- **3D & Gráficos:** [Three.js](https://threejs.org/) / [@react-three/fiber](https://pmndrs.rs/building-with-r3f) / [OGL](https://github.com/oamap/ogl)
-- **Hospedagem & Analytics:** [Vercel](https://vercel.com/) (Analytics & Speed Insights)
+- **Gráficos (WebGL):** [OGL](https://github.com/oframe/ogl)
+- **Hospedagem & Analytics:** [Vercel](https://vercel.com/)
+
+---
+
+## 🗂️ Estrutura
+
+```
+src/
+├── app/              # Rotas (home, work, about, contact), sitemap, robots, OG image
+├── components/
+│   ├── canvas/       # Fundo WebGL (Balatro)
+│   ├── layout/       # Header, cursor, splash, etc.
+│   ├── ui/           # Componentes reutilizáveis
+│   └── work/         # Partes da página de projetos
+├── context/          # Idioma (PT/EN) e traduções
+└── data/             # Dados dos projetos
+```
 
 ---
 
 ## 💻 Como Rodar Localmente
 
-Para rodar este projeto na sua máquina local, siga os passos abaixo:
-
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/KayqueComK/portfolio.git
-   cd portfolio
+   git clone https://github.com/KayqueComK/MyPort.git
+   cd MyPort
    ```
 
 2. **Instale as dependências:**
@@ -43,7 +65,16 @@ Para rodar este projeto na sua máquina local, siga os passos abaixo:
    npm run dev
    ```
 
-4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
+4. Abra [http://localhost:3000](http://localhost:3000) no navegador.
+
+### Scripts
+
+| Comando         | Descrição                    |
+| --------------- | ---------------------------- |
+| `npm run dev`   | Servidor de desenvolvimento  |
+| `npm run build` | Build de produção            |
+| `npm start`     | Roda o build de produção     |
+| `npm run lint`  | Verifica o código com ESLint |
 
 ---
 
@@ -52,6 +83,6 @@ Para rodar este projeto na sua máquina local, siga os passos abaixo:
 Vamos conversar ou trabalhar juntos? Entre em contato comigo através dos canais abaixo:
 
 - ✉️ **E-mail:** [Kayquealberto@hotmail.com](mailto:Kayquealberto@hotmail.com)
-- 💼 **LinkedIn:** [Kayque Alberto](https://www.linkedin.com/in/kayque-alberto-937a08230?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
+- 💼 **LinkedIn:** [Kayque Alberto](https://www.linkedin.com/in/kayque-alberto-937a08230/)
 - 🐙 **GitHub:** [@KayqueComK](https://github.com/KayqueComK)
-- 📸 **Instagram:** [@k.ayqueal](https://www.instagram.com/k.ayqueal?igsh=dzUyYjZhemNyMGQy&utm_source=qr)
+- 📸 **Instagram:** [@k.ayqueal](https://www.instagram.com/k.ayqueal/)

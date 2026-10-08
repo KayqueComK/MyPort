@@ -8,6 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { Flash, ArrowRight2, ArrowUp2, ArrowDown2 } from "iconsax-react";
 import { projects, localizeProject } from "@/data/projects";
 import {
+  ProjectImage,
   ProblemBox,
   TagList,
   DemoCredentials,
@@ -87,6 +88,8 @@ export default function Work() {
                 </span>
               )}
             </div>
+
+            <ProjectImage project={activeProject} />
 
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[var(--foreground)]">
               {activeProject.title}
@@ -181,6 +184,7 @@ export default function Work() {
                       transition={{ duration: 0.25 }}
                       className="md:hidden pb-5 pt-2 px-3.5 space-y-3.5 overflow-hidden text-sm rounded-2xl bg-white/70 border border-[rgba(0,87,255,0.12)] my-2"
                     >
+                      <ProjectImage project={project} compact />
                       <ProblemBox project={project} compact />
                       <p className="text-xs sm:text-sm opacity-80 leading-relaxed">
                         {project.description}

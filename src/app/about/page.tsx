@@ -125,7 +125,7 @@ export default function About() {
                 {t("about.skillsCat2")}
               </h3>
               <div className="flex flex-wrap gap-2.5">
-                {["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js"].map((skill) => (
+                {["React", "Next.js", "TypeScript", "Tailwind CSS", "WebGL"].map((skill) => (
                   <span
                     key={skill}
                     className="px-4 py-2 border border-[rgba(27,27,27,0.15)] bg-white/60 rounded-full text-xs sm:text-sm font-medium tracking-wide hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors cursor-default"
