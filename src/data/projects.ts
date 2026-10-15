@@ -30,6 +30,20 @@ export const projects: Project[] = [
     image: "/projects/financely.png",
   },
   {
+    id: "voxclamantis",
+    title: "Vox Clamantis - Teologia & Tradição Católica",
+    category: "Web & Conteúdo Teológico",
+    featured: false,
+    problem:
+      "Centraliza a difusão da doutrina, catequese e história da Igreja em uma plataforma editorial moderna, acessível e sem ruídos visuais.",
+    description:
+      "Plataforma editorial e blog teológico focado em doutrina, patrística e espiritualidade católica. Desenvolvido com TypeScript e Vite, conta com integração ao Supabase, renderização dinâmica de artigos em Markdown, leitor de progresso e animações com GSAP.",
+    tags: ["TypeScript", "Vite", "Supabase", "GSAP", "HTML5 & CSS", "Markdown"],
+    link: "https://voxclamantis.vercel.app/",
+    github: "https://github.com/KayqueComK/BlogCatolico",
+    image: "/projects/voxclamantis.png",
+  },
+  {
     id: "kanban",
     title: "Kanban Dashboard com Pomodoro",
     category: "Produtividade & Web",

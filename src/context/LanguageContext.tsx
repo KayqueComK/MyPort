@@ -73,6 +73,14 @@ export const translations = {
           description:
             "Plataforma completa de gestão financeira desenvolvida com arquitetura robusta. Conta com autenticação de usuários, modelagem relacional via Prisma, gráficos analíticos interativos e containerização com Docker.",
         },
+        voxclamantis: {
+          title: "Vox Clamantis - Teologia & Tradição Católica",
+          category: "Web & Conteúdo Teológico",
+          problem:
+            "Centraliza a difusão da doutrina, catequese e história da Igreja em uma plataforma editorial moderna, acessível e sem ruídos visuais.",
+          description:
+            "Plataforma editorial e blog teológico focado em doutrina, patrística e espiritualidade católica. Desenvolvido com TypeScript e Vite, conta com integração ao Supabase, renderização dinâmica de artigos em Markdown, leitor de progresso e animações com GSAP.",
+        },
         kanban: {
           title: "Kanban Dashboard com Pomodoro",
           category: "Produtividade & Web",
@@ -182,6 +190,14 @@ export const translations = {
             "Solves the lack of budget control by centralizing cash flow, monthly budgets, and smart real-time reports.",
           description:
             "Complete financial management platform built with robust architecture. Features user authentication, Prisma relational modeling, interactive charts, and Docker containerization.",
+        },
+        voxclamantis: {
+          title: "Vox Clamantis - Theology & Catholic Tradition",
+          category: "Web & Theological Content",
+          problem:
+            "Centralizes the sharing of Catholic doctrine, catechesis, and Church history in a modern, accessible, and distraction-free editorial platform.",
+          description:
+            "Theological blog and editorial platform focused on Catholic doctrine, patristics, and spirituality. Built with TypeScript and Vite, featuring Supabase database integration, dynamic Markdown article rendering, reading progress tracking, and GSAP animations.",
         },
         kanban: {
           title: "Kanban Dashboard with Pomodoro",
