@@ -117,6 +117,7 @@ export const translations = {
       copiedEmailBtn: "✓ E-mail Copiado!",
       downloadCvBtn: "↓ Baixar Currículo (PDF)",
       cvFileName: "Curriculo-Kayque-Alberto.pdf",
+      githubActivity: "Atividade no GitHub",
     },
   },
   en: {
@@ -235,6 +236,7 @@ export const translations = {
       copiedEmailBtn: "✓ Email Copied!",
       downloadCvBtn: "↓ Download Resume (PDF)",
       cvFileName: "Resume-Kayque-Alberto.pdf",
+      githubActivity: "GitHub Activity",
     },
   },
 };
